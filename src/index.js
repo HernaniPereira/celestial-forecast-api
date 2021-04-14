@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
+const port = process.env.PORT || 3000;
 //const uri = process.env.MONGODB_URI;
 
 const app = express();
@@ -29,6 +30,6 @@ app.get("/", (req, res) => {
   res.send("Hi there!");
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Listening on port 3000");
 });
