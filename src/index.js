@@ -1,11 +1,17 @@
+require("./models/User");
 const express = require("express");
 const mongoose = require("mongoose");
-const uri = process.env.MONGODB_URI;
+const bodyParser = require("body-parser");
+const authRoutes = require("./routes/authRoutes");
+//const uri = process.env.MONGODB_URI;
 
 const app = express();
 
-/* const uri =
-  "mongodb+srv://admin:passwordadmin@cluster0.tsw85.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"; */
+app.use(express.json());
+app.use(authRoutes);
+
+const uri =
+  "mongodb+srv://admin:passwordadmin@cluster0.tsw85.mongodb.net/CelestialWeather?retryWrites=true&w=majority";
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
