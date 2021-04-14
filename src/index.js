@@ -4,7 +4,7 @@ const uri = process.env.MONGODB_URI;
 
 const app = express();
 
-/* const MONGODB_URI =
+/* const uri =
   "mongodb+srv://admin:passwordadmin@cluster0.tsw85.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"; */
 mongoose.connect(uri, {
   useNewUrlParser: true,
