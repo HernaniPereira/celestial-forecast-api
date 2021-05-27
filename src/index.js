@@ -5,15 +5,14 @@ const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
 const port = process.env.PORT || 3000;
 const requireAuth = require("./middlewares/requireAuth");
-//const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGODB_URI;
 
 const app = express();
 
 app.use(express.json());
 app.use(authRoutes);
 
-const uri =
-  "mongodb+srv://admin:passwordadmin@cluster0.tsw85.mongodb.net/CelestialWeather?retryWrites=true&w=majority";
+//const uri ="mongodb+srv://admin:passwordadmin@cluster0.tsw85.mongodb.net/CelestialWeather?retryWrites=true&w=majority";
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
